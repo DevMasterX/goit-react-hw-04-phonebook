@@ -1,58 +1,62 @@
 import { Component } from 'react';
 import { AddButton, Form, Input, Label } from './ContactForm.styled';
 
-const INITIAL_STATE = {
-  name: '',
-  number: '',
+export const ContactForm = () => {
+  return <div>ContactForm</div>;
 };
 
-export default class ContactForm extends Component {
-  state = INITIAL_STATE;
+// const INITIAL_STATE = {
+//   name: '',
+//   number: '',
+// };
 
-  handleInputChange = ({ target: { value, name } }) => {
-    this.setState({ [name]: value });
-  };
+// export default class ContactForm extends Component {
+//   state = INITIAL_STATE;
 
-  handleFormSubmit = event => {
-    event.preventDefault();
+//   handleInputChange = ({ target: { value, name } }) => {
+//     this.setState({ [name]: value });
+//   };
 
-    this.props.createContact(this.state);
-    this.setState(INITIAL_STATE);
-  };
+//   handleFormSubmit = event => {
+//     event.preventDefault();
 
-  render() {
-    return (
-      <Form onSubmit={this.handleFormSubmit}>
-        <Label>
-          Name
-          <Input
-            type="text"
-            name="name"
-            placeholder="Enter name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-            value={this.state.name}
-            onChange={this.handleInputChange}
-          />
-        </Label>
+//     this.props.createContact(this.state);
+//     this.setState(INITIAL_STATE);
+//   };
 
-        <Label>
-          Number
-          <Input
-            type="tel"
-            name="number"
-            placeholder="Enter number XXX-XX-XX"
-            pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
-            value={this.state.number}
-            onChange={this.handleInputChange}
-          />
-        </Label>
+//   render() {
+//     return (
+//       <Form onSubmit={this.handleFormSubmit}>
+//         <Label>
+//           Name
+//           <Input
+//             type="text"
+//             name="name"
+//             placeholder="Enter name"
+//             pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+//             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+//             required
+//             value={this.state.name}
+//             onChange={this.handleInputChange}
+//           />
+//         </Label>
 
-        <AddButton type="submit">Add contact</AddButton>
-      </Form>
-    );
-  }
-}
+//         <Label>
+//           Number
+//           <Input
+//             type="tel"
+//             name="number"
+//             placeholder="Enter number XXX-XX-XX"
+//             pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+//             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+//             required
+//             value={this.state.number}
+//             onChange={this.handleInputChange}
+//           />
+//         </Label>
+
+//         <AddButton type="submit">Add contact</AddButton>
+//       </Form>
+//     );
+//   }
+// }
