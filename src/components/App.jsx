@@ -68,7 +68,7 @@ export const App = () => {
   return (
     <div className="phonebook-wrapper">
       <h1>Phonebook</h1>
-      <ContactForm createContact={addContact} />
+      <ContactForm onSubmit={addContact} />
 
       <h2>Contacts</h2>
       {contacts.length > 0 ? (
